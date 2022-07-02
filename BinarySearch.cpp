@@ -5,7 +5,7 @@ int binarySearch(int arr[], int size, int key)
 {
     int start = 0;
     int end = size - 1;
-    int mid = start + (end - start) / 2;   
+    int mid = start + (end - start) / 2;
 
     while (start <= end)
     {
@@ -26,6 +26,29 @@ int binarySearch(int arr[], int size, int key)
     return -1;
 }
 
+// Recursive Solution
+int binarySearchRecursiveSolution(int start, int end, int key, int arr[])
+{
+    // BASE CASE
+    if (start > end)
+    {
+        return -1;
+    }
+    int mid = start + (end - start) / 2;
+    if (key == arr[mid])
+    {
+        return mid;
+    }
+    if (key > arr[mid])
+    {
+        return binarySearchRecursiveSolution(mid + 1, end, key, arr);
+    }
+    else
+    {
+        return binarySearchRecursiveSolution(start, mid - 1, key, arr);
+    }
+}
+
 int main()
 {
     int size, key;
@@ -38,6 +61,8 @@ int main()
     }
     cout << "Enter the element to be searched :" << endl;
     cin >> key;
-    cout << key << " found at index: " << binarySearch(arr, size, key);
+    cout << key << " found at index: " << binarySearch(arr, size, key)<<endl;
+
+    cout << key << " found at index: " << binarySearchRecursiveSolution(0, size - 1, key, arr) << " using recusrion";
     return 0;
 }
