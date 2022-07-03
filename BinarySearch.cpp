@@ -61,8 +61,8 @@ int main()
     }
     cout << "Enter the element to be searched :" << endl;
     cin >> key;
-    cout << key << " found at index: " << binarySearch(arr, size, key)<<endl;
+    cout << key << " found at index: " << binarySearch(arr, size, key) << endl;
 
-    cout << key << " found at index: " << binarySearchRecursiveSolution(0, size - 1, key, arr) << " using recusrion";
+    cout << key << " found at index: " << binarySearchRecursiveSolution(0, size - 1, key, arr) << " using recursion";
     return 0;
 }

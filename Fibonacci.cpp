@@ -11,10 +11,22 @@ void printFibonacci(int n){
         b=sum;
     }
 }
+//Print nth number in Fibonacci Series using recursion
+int fib(int num){
+    if(num==0){
+        return 0;
+    }
+    if(num==1){
+        return 1;
+    }
+    return fib(num-1)+fib(num-2);
+}
 
 int main(){
     int N;
     cin>>N;
     printFibonacci(N);
+
+    cout<<endl<<fib(11);
     return 0;
 }
